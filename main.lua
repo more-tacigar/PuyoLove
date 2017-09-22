@@ -48,8 +48,8 @@ local function newPuyo()
 	puyo[2].x, puyo[2].y = 3, 14
 	table.remove(nextPuyos, 1)
 	table.insert(nextPuyos, {
-		{ x = 3, y = 13, type = math.random(numTypeSlider.value)},
-		{ x = 3, y = 14, type = math.random(numTypeSlider.value)},
+		{ x = 3, y = 13, type = math.random(math.floor(numTypeSlider.value))},
+		{ x = 3, y = 14, type = math.random(math.floor(numTypeSlider.value))},
 	})
 end
 
@@ -63,8 +63,8 @@ local function resetGame()
 	end
 	for i = 1, 2 do
 		table.insert(nextPuyos, {
-			{ type = math.random(numTypeSlider.value)},
-			{ type = math.random(numTypeSlider.value)},
+			{ type = math.random(math.floor(numTypeSlider.value))},
+			{ type = math.random(math.floor(numTypeSlider.value))},
 		})
 	end
 	newPuyo()
